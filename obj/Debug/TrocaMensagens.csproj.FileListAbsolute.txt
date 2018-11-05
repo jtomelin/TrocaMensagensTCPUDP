@@ -1,0 +1,11 @@
+C:\Users\Jader\Desktop\TrocaMensagens\bin\Debug\TrocaMensagens.exe.config
+C:\Users\Jader\Desktop\TrocaMensagens\bin\Debug\TrocaMensagens.exe
+C:\Users\Jader\Desktop\TrocaMensagens\bin\Debug\TrocaMensagens.pdb
+C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.csprojResolveAssemblyReference.cache
+C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.Form1.resources
+C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.Properties.Resources.resources
+C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.csproj.GenerateResource.Cache
+C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.csproj.CoreCompileInputs.cache
+C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.exe
+C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.pdb
+C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.Login.resources
