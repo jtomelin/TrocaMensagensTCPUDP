@@ -9,3 +9,14 @@ C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.csproj.CoreCompil
 C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.exe
 C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.pdb
 C:\Users\Jader\Desktop\TrocaMensagens\obj\Debug\TrocaMensagens.Login.resources
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\bin\Debug\TrocaMensagens.exe.config
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\bin\Debug\TrocaMensagens.exe
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\bin\Debug\TrocaMensagens.pdb
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.csprojAssemblyReference.cache
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.Form1.resources
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.Login.resources
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.Properties.Resources.resources
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.csproj.GenerateResource.cache
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.csproj.CoreCompileInputs.cache
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.exe
+C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.pdb

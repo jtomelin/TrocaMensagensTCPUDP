@@ -41,6 +41,14 @@ namespace TrocaMensagens
                 Usuarios = ConnectionCtrl.GetUsuarios();
             }
 
+            /*System.Timers.Timer TimerMensagem = new System.Timers.Timer(2000);
+            TimerMensagem.Elapsed += TimerMensagem_Elapsed;
+            TimerMensagem.Start();
+
+            System.Timers.Timer TimerUsuarios = new System.Timers.Timer(5000);
+            TimerUsuarios.Elapsed += TimerUsuarios_Elapsed;
+            TimerUsuarios.Start();*/
+
             threadMensagens = new Thread(new ThreadStart(OnGetMessages));
             threadMensagens.IsBackground = true;
             threadMensagens.Start();
@@ -64,6 +72,16 @@ namespace TrocaMensagens
                     mapMensagens[Usuarios[i].iCodigo] = "";
                 }
             }
+        }
+
+        private void TimerUsuarios_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            OnGetUsers();
+        }
+
+        private void TimerMensagem_Elapsed(object sender, ElapsedEventArgs e)
+        {
+            OnGetMessages();
         }
 
         void Form1_Closing(object sender, CancelEventArgs e)

@@ -24,22 +24,29 @@ namespace TrocaMensagens
             udpClient = new UdpClient();
         }
 
+        private object lockObject = new object();
+
         public List<Usuario> GetUsuarios()
         {
             List<Usuario> usuarios = new List<Usuario>();
+            string returnData;
 
             try
             {
-                ConectarTCP();
+                lock (lockObject)
+                {
+                    ConectarTCP();
+                    var serverStream = tcpClient.GetStream();
+                    byte[] outStream = Encoding.Default.GetBytes($"GET USERS {sLogin}:{sSenha}");
+                    serverStream.Write(outStream, 0, outStream.Length);
+                    serverStream.Flush();
 
-                var serverStream = tcpClient.GetStream();
-                byte[] outStream = Encoding.UTF8.GetBytes($"GET USERS {sLogin}:{sSenha}");
-                serverStream.Write(outStream, 0, outStream.Length);
-                serverStream.Flush();
+                    byte[] inStream = new byte[tcpClient.ReceiveBufferSize];
+                    serverStream.Read(inStream, 0, tcpClient.ReceiveBufferSize);
+                    returnData = Encoding.Default.GetString(inStream);
+                }
 
-                byte[] inStream = new byte[tcpClient.ReceiveBufferSize];
-                serverStream.Read(inStream, 0, tcpClient.ReceiveBufferSize);
-                string returnData = Encoding.UTF8.GetString(inStream);
+                //FecharTCP();
 
                 int iFirst = 0;
                 int iLast = returnData.IndexOf(':');
@@ -92,7 +99,7 @@ namespace TrocaMensagens
             try
             {
                 ConectarUDP();
-                byte[] outStream = Encoding.UTF8.GetBytes($"SEND MESSAGE {sLogin}:{sSenha}:{iCodigoUsuario}:{sMensagem}");
+                byte[] outStream = Encoding.Default.GetBytes($"SEND MESSAGE {sLogin}:{sSenha}:{iCodigoUsuario}:{sMensagem}");
                 int result = udpClient.Send(outStream, outStream.Length);
                 return true;
             }
@@ -108,15 +115,18 @@ namespace TrocaMensagens
 
             try
             {
-                ConectarTCP();
-                var serverStream = tcpClient.GetStream();
-                byte[] outStream = Encoding.UTF8.GetBytes($"GET MESSAGE {sLogin}:{sSenha}");
-                serverStream.Write(outStream, 0, outStream.Length);
-                serverStream.Flush();
+                lock (lockObject)
+                {
+                    ConectarTCP();
+                    var serverStream = tcpClient.GetStream();
+                    byte[] outStream = Encoding.Default.GetBytes($"GET MESSAGE {sLogin}:{sSenha}");
+                    serverStream.Write(outStream, 0, outStream.Length);
+                    serverStream.Flush();
 
-                byte[] inStream = new byte[tcpClient.ReceiveBufferSize];
-                serverStream.Read(inStream, 0, tcpClient.ReceiveBufferSize);
-                sMensagem = Encoding.UTF8.GetString(inStream);
+                    byte[] inStream = new byte[tcpClient.ReceiveBufferSize];
+                    serverStream.Read(inStream, 0, tcpClient.ReceiveBufferSize);
+                    sMensagem = Encoding.Default.GetString(inStream);
+                }
 
                 return true;
             }
@@ -126,13 +136,17 @@ namespace TrocaMensagens
             }
         }
 
+
         public void ConectarTCP()
         {
-            if (!bConectouTCP)
-            {
-                tcpClient.Connect(sServidor, 1012);
-                bConectouTCP = true;
-            }
+            System.Threading.Thread.Sleep(50);
+
+                if (!bConectouTCP)
+                {
+                    //tcpClient = new TcpClient();
+                    tcpClient.Connect(sServidor, 1012);
+                    bConectouTCP = true;
+                }
         }
 
         public void FecharTCP()
