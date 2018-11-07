@@ -20,6 +20,9 @@ C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores
 C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.csproj.CoreCompileInputs.cache
 C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.exe
 C:\Users\Matheus\Documents\FURB - Computação\Prática em Redes de Computadores\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.pdb
+C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\bin\Debug\TrocaMensagens.exe.config
+C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\bin\Debug\TrocaMensagens.exe
+C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\bin\Debug\TrocaMensagens.pdb
 C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.csprojResolveAssemblyReference.cache
 C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.Form1.resources
 C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.Login.resources
@@ -28,6 +31,3 @@ C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.csproj.Gene
 C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.csproj.CoreCompileInputs.cache
 C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.exe
 C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\obj\Debug\TrocaMensagens.pdb
-C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\bin\Debug\TrocaMensagens.exe.config
-C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\bin\Debug\TrocaMensagens.exe
-C:\Users\Jader\Desktop\TrocaMensagensTCPUDP\bin\Debug\TrocaMensagens.pdb

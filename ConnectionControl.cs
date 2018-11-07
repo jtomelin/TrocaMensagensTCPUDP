@@ -46,8 +46,6 @@ namespace TrocaMensagens
                     returnData = Encoding.UTF8.GetString(inStream);
                 }
 
-                //FecharTCP();
-
                 int iFirst = 0;
                 int iLast = returnData.IndexOf(':');
 
@@ -149,14 +147,6 @@ namespace TrocaMensagens
                 }
         }
 
-        public void FecharTCP()
-        {
-            if (bConectouTCP)
-            {
-                tcpClient.Close();
-                bConectouTCP = false;
-            }
-        }
 
         public void ConectarUDP()
         {
@@ -164,15 +154,6 @@ namespace TrocaMensagens
             {
                 udpClient.Connect(sServidor, 1011);
                 bConectouUDP = true;
-            }
-        }
-
-        public void FecharUDP()
-        {
-            if (bConectouUDP)
-            {
-                tcpClient.Close();
-                bConectouUDP = false;
             }
         }
 

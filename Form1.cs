@@ -52,15 +52,15 @@ namespace TrocaMensagens
 
             threadMensagens = new Thread(new ThreadStart(OnGetMessages));
             threadMensagens.IsBackground = true;
-            threadMensagens.Start();
 
             threadUsuarios = new Thread(new ThreadStart(OnGetUsers));
             threadUsuarios.IsBackground = true;
-            threadUsuarios.Start();
 
             InitializeComponent();
 
             mapMensagens = new Dictionary<int, string>();
+            threadMensagens.Start();
+            threadUsuarios.Start();
 
             if (Usuarios != null)
             {
