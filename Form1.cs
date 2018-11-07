@@ -29,6 +29,7 @@ namespace TrocaMensagens
             bManterAberto = true;
 
             Login log = new Login();
+            log.ConnectionCtrl = this.ConnectionCtrl;
 
             if (log.ShowDialog() == DialogResult.Cancel)
                 bManterAberto = false;

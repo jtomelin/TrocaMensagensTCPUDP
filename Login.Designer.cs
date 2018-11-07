@@ -97,6 +97,7 @@ namespace TrocaMensagens
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            CenterToScreen();
         }
 
         #endregion

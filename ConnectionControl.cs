@@ -37,13 +37,13 @@ namespace TrocaMensagens
                 {
                     ConectarTCP();
                     var serverStream = tcpClient.GetStream();
-                    byte[] outStream = Encoding.Default.GetBytes($"GET USERS {sLogin}:{sSenha}");
+                    byte[] outStream = Encoding.UTF8.GetBytes($"GET USERS {sLogin}:{sSenha}");
                     serverStream.Write(outStream, 0, outStream.Length);
                     serverStream.Flush();
 
                     byte[] inStream = new byte[tcpClient.ReceiveBufferSize];
                     serverStream.Read(inStream, 0, tcpClient.ReceiveBufferSize);
-                    returnData = Encoding.Default.GetString(inStream);
+                    returnData = Encoding.UTF8.GetString(inStream);
                 }
 
                 //FecharTCP();
@@ -99,7 +99,7 @@ namespace TrocaMensagens
             try
             {
                 ConectarUDP();
-                byte[] outStream = Encoding.Default.GetBytes($"SEND MESSAGE {sLogin}:{sSenha}:{iCodigoUsuario}:{sMensagem}");
+                byte[] outStream = Encoding.UTF8.GetBytes($"SEND MESSAGE {sLogin}:{sSenha}:{iCodigoUsuario}:{sMensagem}");
                 int result = udpClient.Send(outStream, outStream.Length);
                 return true;
             }
@@ -119,13 +119,13 @@ namespace TrocaMensagens
                 {
                     ConectarTCP();
                     var serverStream = tcpClient.GetStream();
-                    byte[] outStream = Encoding.Default.GetBytes($"GET MESSAGE {sLogin}:{sSenha}");
+                    byte[] outStream = Encoding.UTF8.GetBytes($"GET MESSAGE {sLogin}:{sSenha}");
                     serverStream.Write(outStream, 0, outStream.Length);
                     serverStream.Flush();
 
                     byte[] inStream = new byte[tcpClient.ReceiveBufferSize];
                     serverStream.Read(inStream, 0, tcpClient.ReceiveBufferSize);
-                    sMensagem = Encoding.Default.GetString(inStream);
+                    sMensagem = Encoding.UTF8.GetString(inStream);
                 }
 
                 return true;
@@ -173,6 +173,45 @@ namespace TrocaMensagens
             {
                 tcpClient.Close();
                 bConectouUDP = false;
+            }
+        }
+
+        public bool ValidarUsuario()
+        {
+            try
+            {
+                lock (lockObject)
+                {
+                    ConectarTCP();
+                    var serverStream = tcpClient.GetStream();
+                    byte[] outStream = Encoding.UTF8.GetBytes($"GET USERS {sLogin}:{sSenha}");
+                    serverStream.Write(outStream, 0, outStream.Length);
+                    serverStream.Flush();
+
+                    byte[] inStream = new byte[tcpClient.ReceiveBufferSize];
+                    serverStream.Read(inStream, 0, tcpClient.ReceiveBufferSize);
+                    string receivedData = Encoding.UTF8.GetString(inStream);
+
+                    int iLast = receivedData.IndexOf('\r');
+
+                    if (iLast != -1)
+                    {
+                        string aux = receivedData.Substring(0, iLast);
+
+                        if (aux == "Usuário inválido!")
+                            return false;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+
+                    return true;
+                }
+            }
+            catch (Exception e)
+            {
+                return false;
             }
         }
     }

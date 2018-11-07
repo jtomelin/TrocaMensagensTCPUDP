@@ -14,6 +14,7 @@ namespace TrocaMensagens
     {
         public string sLogin { get; set; }
         public string sSenha { get; set; }
+        public ConnectionControl ConnectionCtrl { get; set; }
 
         public Login()
         {
@@ -30,13 +31,22 @@ namespace TrocaMensagens
 
             if (this.sLogin.Length == 0)
             {
-                MessageBox.Show("Login deve ser informado", "Login", MessageBoxButtons.OK);
+                MessageBox.Show("Login deve ser informado", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (this.sSenha.Length == 0)
             {
-                MessageBox.Show("Senha deve ser informada", "Login", MessageBoxButtons.OK);
+                MessageBox.Show("Senha deve ser informada", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ConnectionCtrl.sLogin = this.sLogin;
+            ConnectionCtrl.sSenha = this.sSenha;
+
+            if (!ConnectionCtrl.ValidarUsuario())
+            {
+                MessageBox.Show("Usuário inválido", "Login", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
